@@ -1,11 +1,12 @@
 import React from 'react'
+import style from './Button.module.css'
 /**
  * simple button 
  * @returns react component structure
  */
 const Button=(props)=>{
     console.log(props);
-    return <button className='Button'>
+    return <button className={style.Button}>
         {props.children}
     </button>;
 }

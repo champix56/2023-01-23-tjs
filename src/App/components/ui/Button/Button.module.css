@@ -14,7 +14,9 @@
     margin-bottom: 18px;
     
 }
-.Button image{
+.Button img{
     max-width: 128px;
-    max-height: 128px;
+    height: 64px;
+    display: inline;
 }
+.Button *{vertical-align: middle;}

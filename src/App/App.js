@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './components/ui/Button/Button'
+import Button2 from './components/ui/Button2/Button'
 import './App.css';
 
 function App() {
@@ -8,9 +9,9 @@ function App() {
       DEMAT BREIZH
       <hr />
       <Button>Cliquez<br/>ici!!</Button>
-      <Button><div>Cancel<br/>ag</div></Button>
+      <Button2><div>Cancel<br/>ag</div></Button2>
       <Button>ok</Button>
-      <Button><img src="/img/red_cross.png" alt='close'/>Hello</Button>
+      <Button2><img src="/img/red_cross.png" alt='close'/>Hello</Button2>
       <Button children="Hello" />
     </div>
   );
