@@ -5,12 +5,13 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     DEMAT BREIZH
-     <hr/>
-     <Button text="Cliquez ici!!"/>
-     <Button text="Cancel"/>
-     <Button text="ok"/>
-     <Button/>
+      DEMAT BREIZH
+      <hr />
+      <Button>Cliquez ici!!</Button>
+      <Button>Cancel</Button>
+      <Button>ok</Button>
+      <Button>Hello</Button>
+      <Button children="Hello" />
     </div>
   );
 }
