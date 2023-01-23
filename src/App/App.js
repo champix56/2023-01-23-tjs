@@ -7,10 +7,10 @@ function App() {
     <div className="App">
       DEMAT BREIZH
       <hr />
-      <Button>Cliquez ici!!</Button>
-      <Button>Cancel</Button>
+      <Button>Cliquez<br/>ici!!</Button>
+      <Button><div>Cancel<br/>ag</div></Button>
       <Button>ok</Button>
-      <Button>Hello</Button>
+      <Button><img src="/img/red_cross.png" alt='close'/>Hello</Button>
       <Button children="Hello" />
     </div>
   );
