@@ -3,7 +3,8 @@ import React from 'react'
  * simple button 
  * @returns react component structure
  */
-const Button=()=>{
+const Button=(props)=>{
+    console.log(props);
     return <button className='Button'>benjamin</button>;
 }
 /*function Button(){

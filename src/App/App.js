@@ -7,9 +7,9 @@ function App() {
     <div className="App">
      DEMAT BREIZH
      <hr/>
-     <Button/>
-     <Button/>
-     <Button/>
+     <Button text="Cliquez ici!!"/>
+     <Button text="Cancel"/>
+     <Button text="ok"/>
      <Button/>
     </div>
   );
