@@ -5,7 +5,9 @@ import React from 'react'
  */
 const Button=(props)=>{
     console.log(props);
-    return <button className='Button'>benjamin</button>;
+    return <button className='Button'>
+        {props.text}
+    </button>;
 }
 /*function Button(){
     return <button className='Button'>benjamin</button>
