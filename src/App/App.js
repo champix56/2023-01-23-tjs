@@ -21,7 +21,7 @@ class App extends React.PureComponent {
           //retard de un car setstate est async
           //console.log(this.state.counter);
         }}>Click -1</Button>
-        <Button>Click +1</Button>
+        <Button >Click +1</Button>
       </div>
     );
   }
