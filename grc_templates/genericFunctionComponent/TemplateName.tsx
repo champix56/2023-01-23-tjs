@@ -15,7 +15,7 @@ const TemplateName: React.FC<ITemplateNameProps> = (props) => {
         <div className={style.TemplateName}
             data-testid="TemplateName"
             style={props.style}>
-            templaName
+            templateName
         </div>
     );
 };
