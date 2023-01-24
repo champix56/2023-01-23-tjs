@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './Button.module.css'
 /**
  * simple button 
@@ -7,13 +7,20 @@ import style from './Button.module.css'
 const Button = (props) => {
     //valeur etatique pour function
     const [isClicked, setIsClicked] = useState(false);
+    //hook d'effet de cycle de vie d'une valeur / ou de composant
+    useEffect(() => {
+        if (isClicked) {
+            setTimeout(() => setIsClicked(false), 750);
+        }
+    }, [isClicked]);
+
     console.log(props);
-    return ( 
+    return (
         <button
             className={
                 //isClicked?style.Button+' '+style.clicked:style.Button
-                `${style.Button}${isClicked?' '+style.clicked:''}`
-                }
+                `${style.Button}${isClicked ? ' ' + style.clicked : ''}`
+            }
             onClick={(arg) => {
                 setIsClicked(true);
                 console.log(arg);
