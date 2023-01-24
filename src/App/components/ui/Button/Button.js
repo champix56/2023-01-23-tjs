@@ -6,16 +6,16 @@ import style from './Button.module.css'
  */
 const Button = (props) => {
     //valeur etatique pour function
-    const [isClicked, setIsClicked] = useState({clickState:false,uneValue:"hello button"});
+    const [isClicked, setIsClicked] = useState(false);
     console.log(props);
     return ( 
         <button
             className={
                 //isClicked?style.Button+' '+style.clicked:style.Button
-                `${style.Button}${isClicked.clickState?' '+style.clicked:''}`
+                `${style.Button}${isClicked?' '+style.clicked:''}`
                 }
             onClick={(arg) => {
-                setIsClicked({...isClicked,clickState:true});
+                setIsClicked(true);
                 console.log(arg);
                 props.onButtonClick();
             }}>
