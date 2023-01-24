@@ -1,18 +1,15 @@
 import React from 'react';
 import Button from './components/ui/Button/Button'
-import Button2 from './components/ui/Button2/Button'
 import './App.css';
 
 function App() {
+  let counter=0;
   return (
     <div className="App">
-      DEMAT BREIZH
-      <hr />
-      <Button>Cliquez<br/>ici!!</Button>
-      <Button2><div>Cancel<br/>ag</div></Button2>
-      <Button>ok</Button>
-      <Button2><img src="/img/red_cross.png" alt='close'/>Hello</Button2>
-      <Button children="Hello" />
+     voici le nb de click : {counter}
+     <hr/>
+     <Button>Click -1</Button>
+     <Button>Click +1</Button>
     </div>
   );
 }
