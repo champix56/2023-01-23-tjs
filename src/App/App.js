@@ -11,6 +11,7 @@ class App extends React.PureComponent {
         <Button onButtonClick={() => {
           this.counter--;
           console.log(this.counter);
+          this.forceUpdate();
         }}>Click -1</Button>
         <Button>Click +1</Button>
       </div>
