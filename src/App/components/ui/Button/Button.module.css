@@ -20,3 +20,11 @@
     display: inline;
 }
 .Button *{vertical-align: middle;}
+.Button:hover{
+    box-shadow: 10px 10px 25px grey;
+}
+.Button.clicked
+{
+    box-shadow: 5px 5px 25px grey;
+    border: 1px solid slategrey;
+}

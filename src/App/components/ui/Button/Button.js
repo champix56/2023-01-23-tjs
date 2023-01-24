@@ -6,7 +6,7 @@ import style from './Button.module.css'
  */
 const Button = (props) => {
     console.log(props);
-    return (
+    return ( 
         <button
             className={style.Button}
             onClick={(arg) => {
