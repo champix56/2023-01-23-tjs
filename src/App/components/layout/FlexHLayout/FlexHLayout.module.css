@@ -1,1 +1,9 @@
-.FlexHLayout {}
+.FlexHLayout {
+    display: flex;
+}
+.FlexHLayout>*:first-child{
+    flex-grow: 1;
+}
+.FlexHLayout>*:nth-child(2){
+    padding: 0 15px;
+}

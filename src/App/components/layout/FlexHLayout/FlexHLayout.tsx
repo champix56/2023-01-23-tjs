@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import style from './FlexHLayout.module.css'
 export interface IFlexHLayoutProps {
-    style?: {}
+    style?: {},
+    children: Array<React.ReactElement>
 }
-export interface IFlexHLayoutState { }
-export const initialState: IFlexHLayoutState = {}
+
 const FlexHLayout: React.FC<IFlexHLayoutProps> = (props) => {
-    const [state, setstate] = useState(initialState);
-    useEffect(() => {
-        //cmpdidmount
-    }, []);
+
     return (
         <div className={style.FlexHLayout}
             data-testid="FlexHLayout"
             style={props.style}>
-            templaName
+            {props.children}
         </div>
     );
 };
 FlexHLayout.propTypes = {
     style: PropTypes.object,
+    children: PropTypes.array.isRequired,
 }
-FlexHLayout.defaultProps = {}
+
 export default FlexHLayout;
