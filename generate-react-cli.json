@@ -18,7 +18,27 @@
       "withStory": true,
       "withLazy": true,
       "customTemplates":{
-        "component":"grc_templates/genericFunctionComponent/TemplateName.jsx"
+        "component":"grc_templates/genericFunctionComponent/TemplateName.tsx"
+      }
+    },
+    "layout-component":{
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc_templates/genericFunctionComponent/TemplateName.tsx"
+      }
+    },
+    "feature-component":{
+      "path": "src/App/components/feature",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc_templates/genericFunctionComponent/TemplateName.tsx"
       }
     }
   }
