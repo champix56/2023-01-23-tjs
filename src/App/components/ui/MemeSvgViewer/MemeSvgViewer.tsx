@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import style from './MemeSvgViewer.module.css'
-export interface IMemeSvgViewerProps {
-    style?: {}
+import React from 'react'
+import { connect } from 'react-redux'
+import { MemeSVGViewer, ImageInterface } from 'orsys-tjs-meme'
+import { BASE_MEME_IMG } from '../../../config/config'
+
+function mapDispatchToProps(dispatch:Function) {
+    return {
+    }
+
 }
-export interface IMemeSvgViewerState { }
-export const initialState: IMemeSvgViewerState = {}
-const MemeSvgViewer: React.FC<IMemeSvgViewerProps> = (props) => {
-    const [state, setstate] = useState(initialState);
-    useEffect(() => {
-        //cmpdidmount
-    }, []);
-    return (
-        <div className={style.MemeSvgViewer}
-            data-testid="MemeSvgViewer"
-            style={props.style}>
-            templaName
-        </div>
-    );
-};
-MemeSvgViewer.propTypes = {
-    style: PropTypes.object,
+function mapStateToProps(stateStore: any, propsParent: any) {
+    return {
+        ...propsParent,
+        meme: stateStore.current,
+        image: stateStore.listes.images.find((i: ImageInterface) => i.id === stateStore.current.imageId),
+        basePath:BASE_MEME_IMG
+    }
 }
-MemeSvgViewer.defaultProps = {}
-export default MemeSvgViewer;
+export default connect(mapStateToProps,mapDispatchToProps)(MemeSVGViewer)

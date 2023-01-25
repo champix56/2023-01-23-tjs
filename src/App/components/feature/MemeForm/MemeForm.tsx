@@ -1,5 +1,7 @@
 import { MemeInterface, ImageInterface } from "orsys-tjs-meme";
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { updateCurrent } from "../../../store/current";
 import Button from "../../ui/Buttonts/Button";
 import style from "./MemeForm.module.css";
 
@@ -177,4 +179,35 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
     </div>
   );
 };
-export default MemeForm;
+function mapDispatchToProps(dispatch:Function){
+  return {
+    onMemeValueChange:(newMeme:MemeInterface)=>{
+      dispatch(updateCurrent(newMeme))
+    }
+  }
+}
+function mapStateToProps(state:any,ownprops:any){
+  return {
+    ...ownprops,
+    images:state.listes.images,
+    meme:state.current
+   
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  )(MemeForm);
+  export const UN_MemeForm=MemeForm;
+
+
+ 
+/*
+export default function CONMemeForm(props) {
+  const dispatch =useDispatch();
+  const imgs=useSelector(s=>s.listes.images);
+  const meme=useSelector(s=>s.current);
+
+  return <MemeForm ...props onMemeValueChange={dispatch(updateChange(meme))} images={imgs}/>
+}
+*/
