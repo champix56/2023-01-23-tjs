@@ -132,6 +132,12 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               id="f_underline"
               type="checkbox"
               checked={props.meme.underline}
+              onChange={
+                (evt)=>{
+                  console.log(evt.target.value);
+                  props.onMemeValueChange({...props.meme,underline:evt.target.checked});
+                }
+              }
             />
           </div>
           <div>
@@ -141,6 +147,12 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               id="f_italic"
               type="checkbox"
               checked={props.meme.italic}
+              onChange={
+                (evt)=>{
+                  console.log(evt.target.value);
+                  props.onMemeValueChange({...props.meme,italic:evt.target.checked});
+                }
+              }
             />
           </div>
         </div>
