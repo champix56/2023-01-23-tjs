@@ -5,11 +5,13 @@ import style from "./MemeForm.module.css";
 
 //types
 interface IMemeFormProps {
-  onMemeValueChange:Function,
-  meme:MemeInterface
+  onMemeValueChange: Function,
+  meme: MemeInterface,
+  images: Array<ImageInterface>
 }
 
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
+  console.log(props);
   return (
     <div data-testid="MemeForm" className={style.MemeForm}>
       <form>
@@ -20,16 +22,24 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           placeholder="saisir titre"
           value={props.meme.titre}
           onChange={
-            (evt)=>{
+            (evt) => {
               console.log(evt.target.value);
-              props.onMemeValueChange({...props.meme,titre:evt.target.value});
+              props.onMemeValueChange({ ...props.meme, titre: evt.target.value });
             }
           }
         />
         <hr />
         <h2>Image</h2>
-        <select>
+        <select onChange={
+          (evt) => {
+            console.log(evt.target.value);
+            props.onMemeValueChange({ ...props.meme, imageId: Number(evt.target.value) });
+          }
+        }
+          value={props.meme.imageId}
+        >
           <option value="-1">Aucune</option>
+          {props.images.map((e, i,) => { return <option key={'fimg' + i} value={e.id}>{e.name}</option> })}
         </select>
         <hr />
         <h2>text</h2>
@@ -37,9 +47,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           type="text"
           value={props.meme.text}
           onChange={
-            (evt)=>{
+            (evt) => {
               console.log(evt.target.value);
-              props.onMemeValueChange({...props.meme,text:evt.target.value});
+              props.onMemeValueChange({ ...props.meme, text: evt.target.value });
             }
           }
         />
@@ -52,9 +62,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               className={style.smallInput}
               value={props.meme.x}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,x:Number(evt.target.value)});
+                  props.onMemeValueChange({ ...props.meme, x: Number(evt.target.value) });
                 }
               }
             />
@@ -67,24 +77,24 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               className={style.smallInput}
               value={props.meme.y}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,y:Number(evt.target.value)});
+                  props.onMemeValueChange({ ...props.meme, y: Number(evt.target.value) });
                 }
               }
             />
           </div>
         </div>
         <hr />
-        <label htmlFor="f_color">Couleur</label><br/>
+        <label htmlFor="f_color">Couleur</label><br />
         <input
           type="color"
           id="f_color"
           value={props.meme.color}
           onChange={
-            (evt)=>{
+            (evt) => {
               console.log(evt.target.value);
-              props.onMemeValueChange({...props.meme,color:evt.target.value});
+              props.onMemeValueChange({ ...props.meme, color: evt.target.value });
             }
           }
         />
@@ -98,9 +108,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               min={0}
               value={props.meme.fontSize}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,fontSize:Number(evt.target.value)});
+                  props.onMemeValueChange({ ...props.meme, fontSize: Number(evt.target.value) });
                 }
               }
             />
@@ -116,9 +126,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               max="900"
               value={props.meme.fontWeight}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,fontWeight:evt.target.value});
+                  props.onMemeValueChange({ ...props.meme, fontWeight: evt.target.value });
                 }
               }
             />
@@ -133,9 +143,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               type="checkbox"
               checked={props.meme.underline}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,underline:evt.target.checked});
+                  props.onMemeValueChange({ ...props.meme, underline: evt.target.checked });
                 }
               }
             />
@@ -148,15 +158,15 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               type="checkbox"
               checked={props.meme.italic}
               onChange={
-                (evt)=>{
+                (evt) => {
                   console.log(evt.target.value);
-                  props.onMemeValueChange({...props.meme,italic:evt.target.checked});
+                  props.onMemeValueChange({ ...props.meme, italic: evt.target.checked });
                 }
               }
             />
           </div>
         </div>
-        <hr/>
+        <hr />
         <div className={style.half}>
           <Button type="reset" bgColor="tomato">
             Reset
