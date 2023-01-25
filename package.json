@@ -27,7 +27,8 @@
     "layout-cmp": "npx generate-react-cli c --type=layout-component",
     "feat-cmp": "npx generate-react-cli c --type=feature-component",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "json":"json-server -p 5629 db/db.json"
   },
   "eslintConfig": {
     "extends": [
